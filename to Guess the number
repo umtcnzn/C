@@ -1,0 +1,33 @@
+#include <stdio.h>
+#include <stdlib.h>
+//Sayi tahmin etmece..
+
+int main() {
+	int sayi, tahmin, kackez=1;
+	srand(time(NULL));
+	sayi = rand() % 100 + 1;
+	printf("**********____1-100 Arasinda bir sayi sececegim.____**********\n");
+	printf("Bakalim Sectigim sayiyi tahmin edebilecek misin??\n");
+	printf("Tahminin: ");
+	scanf("%d", &tahmin);
+	while (sayi != tahmin) {
+		if (sayi > tahmin) {
+			printf("Tahmininin sectigim sayidan daha kucuk, Hadi bakalim yeniden tahmin et: ");
+			scanf("%d", &tahmin);
+			printf("\n");
+			kackez++;
+			continue;
+		}
+		else if (sayi < tahmin) {
+			printf("Tahminin sectigim sayidan daha buyuk, Hadi bakalim yeniden tahmin et: ");
+			scanf("%d", &tahmin);
+			printf("\n");
+			kackez++;
+			continue;
+		}
+	}
+	printf("\n\n");
+	printf("Tebrikler :) Sectigim %d sayiyi %d. kez denenemende buldun.", sayi, kackez);
+	return 0;
+
+}
